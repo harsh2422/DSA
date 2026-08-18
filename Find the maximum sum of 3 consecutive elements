@@ -1,0 +1,28 @@
+Find the maximum sum of 3 consecutive elements
+int[] nums = {2, 1, 5, 1, 3, 2, 6, 4, 2};
+int k = 3;
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 5, 1, 3, 2, 6, 4, 2};
+        int k = 3;
+        Integer windowSum =0;
+        Integer maxSum=0;
+        for(int i=0;i<k;i++){
+            windowSum = windowSum+ nums[i];
+            maxSum = windowSum;
+        }
+        for(int i=k;i<nums.length;i++){
+            windowSum = windowSum -nums[i-k]+ nums[i];
+            if(windowSum>maxSum){
+                maxSum=windowSum;
+            }
+        }
+        System.out.println("maxSum"+ maxSum);
+    }
+}
