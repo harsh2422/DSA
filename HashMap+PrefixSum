@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int[] nums = {2, 4, -1, 3, 5};a
+        int target = 6;
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        map.put(0,-1);
+        int currentPrefixSum = 0;
+        int ans[] = new int[2];
+        for(int i=0;i<nums.length;i++){
+            currentPrefixSum = currentPrefixSum+nums[i];
+            int previousPrefixSum = currentPrefixSum -target;
+            if(!map.containsKey(previousPrefixSum)){
+                map.put(currentPrefixSum,i);
+            }
+            else{
+                  ans[0]=map.get(previousPrefixSum)+1;
+                  ans[1] = i;
+                  break;
+            }
+
+        }
+        System.out.println(Arrays.toString(ans));
+    }
+}
