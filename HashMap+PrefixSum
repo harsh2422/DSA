@@ -1,5 +1,40 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern:
+Prefix Sum + HashMap
+
+Recognition:
+Need a contiguous subarray with target sum.
+Useful even when negative numbers are present.
+
+Anchor:
+NEED -> search
+HAVE -> store
+
+NEED:
+currentPrefixSum - target
+= previous prefix I need
+
+HAVE:
+currentPrefixSum
+
+HashMap:
+prefixSum -> index
+
+If NEED exists:
+currentPrefix - previousPrefix = target
+
+Subarray:
+start = previousPrefixIndex + 1
+end   = current index
+
+Initial:
+0 -> -1
+means prefix sum 0 existed before the array.
+
+Time: O(n)
+Space: O(n)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
