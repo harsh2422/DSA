@@ -1,5 +1,28 @@
-// Online Java Compiler
-// Find the maximum number of distinct elements in any contiguous window of size k.
+/*
+Pattern:
+Fixed Sliding Window + Frequency HashMap
+
+Recognition:
+Fixed window size + need number of distinct elements.
+
+HashMap:
+number -> frequency inside CURRENT window
+
+Anchor:
+Outgoing -> frequency--
+If frequency becomes 0 -> remove key
+
+Incoming -> frequency++
+
+map.size() = number of distinct elements
+
+Track:
+maxDistinct = best map.size() seen so far
+
+Time: O(n)
+Space: O(k)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
