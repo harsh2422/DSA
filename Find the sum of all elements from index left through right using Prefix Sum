@@ -1,5 +1,30 @@
-// Online Java Compiler
-// Find the sum of all elements from index left through right using Prefix Sum
+/*
+Pattern: Prefix Sum
+
+Recognition:
+Need range sums, especially when there can be many queries.
+
+Anchor:
+Previous total + current
+= current prefix
+
+Build:
+prefix[i] = prefix[i-1] + nums[i]
+
+Range query:
+"Total up to right - everything before left"
+
+left == 0:
+prefix[right]
+
+left > 0:
+prefix[right] - prefix[left-1]
+
+Build: O(n)
+Each query: O(1)
+Space: O(n)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
