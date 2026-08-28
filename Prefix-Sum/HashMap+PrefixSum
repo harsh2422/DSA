@@ -1,0 +1,63 @@
+/*
+Pattern:
+Prefix Sum + HashMap
+
+Recognition:
+Need a contiguous subarray with target sum.
+Useful even when negative numbers are present.
+
+Anchor:
+NEED -> search
+HAVE -> store
+
+NEED:
+currentPrefixSum - target
+= previous prefix I need
+
+HAVE:
+currentPrefixSum
+
+HashMap:
+prefixSum -> index
+
+If NEED exists:
+currentPrefix - previousPrefix = target
+
+Subarray:
+start = previousPrefixIndex + 1
+end   = current index
+
+Initial:
+0 -> -1
+means prefix sum 0 existed before the array.
+
+Time: O(n)
+Space: O(n)
+*/
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int[] nums = {2, 4, -1, 3, 5};
+        int target = 6;
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        map.put(0,-1);
+        int currentPrefixSum = 0;
+        int ans[] = new int[2];
+        for(int i=0;i<nums.length;i++){
+            currentPrefixSum = currentPrefixSum+nums[i];
+            int previousPrefixSum = currentPrefixSum -target;
+            if(!map.containsKey(previousPrefixSum)){
+                map.put(currentPrefixSum,i);
+            }
+            else{
+                  ans[0]=map.get(previousPrefixSum)+1;
+                  ans[1] = i;
+                  break;
+            }
+
+        }
+        System.out.println(Arrays.toString(ans));
+    }
+}
