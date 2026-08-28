@@ -1,0 +1,42 @@
+/*
+Pattern: HashMap
+
+Recognition:
+Need two values whose sum equals target, and need their indexes.
+
+Anchor:
+NEED -> search
+HAVE -> store
+
+NEED = target - nums[i]
+
+HashMap:
+number -> index
+
+Time: O(n)
+Space: O(n)
+*/
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] nums = {7, 4, 1, 9, 6, 3};
+        int target = 10;
+        int[] ans = new int[2];
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int i=0;i<nums.length;i++){
+            int diff = target-nums[i];
+            if(!map.containsKey(diff)){
+                map.put(nums[i],i);
+            }
+            else{
+                  ans[0]=map.get(diff);
+                  ans[1]=i;
+                  break;
+            }
+        }
+
+        System.out.println(Arrays.toString(ans));
+        
+    }
+}
