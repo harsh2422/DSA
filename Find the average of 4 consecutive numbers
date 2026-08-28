@@ -1,5 +1,23 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: Fixed Sliding Window
+
+Recognition:
+Need maximum average of a fixed-size window.
+
+Anchor:
+Maximum average for equal-size windows
+= window having maximum sum.
+
+i enters
+i-k leaves
+
+Approach:
+Find maximum window sum first.
+Divide by k only at the end.
+
+Time: O(n)
+Space: O(1)
+*/
 
 class Main {
     public static void main(String[] args) {
