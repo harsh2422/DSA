@@ -1,5 +1,31 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: Variable Sliding Window
+
+Recognition:
+Need smallest contiguous window satisfying a condition.
+Works here because values are positive/non-negative.
+
+Anchor:
+right -> expand
+left  -> shrink
+
+windowSum < target:
+expand right
+
+windowSum >= target:
+record length
+shrink left
+
+Shrink:
+windowSum -= nums[left]
+left++
+
+Current length:
+right - left + 1
+
+Time: O(n)
+Space: O(1)
+*/
 import java.util.*;
 class Main {
     public static void main(String[] args) {
