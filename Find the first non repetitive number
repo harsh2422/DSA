@@ -1,5 +1,24 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: Frequency Map
+
+Recognition:
+Need to know how many times each number occurs.
+
+Anchor:
+number -> frequency
+
+Approach:
+1. Build frequency map.
+2. Traverse original array again.
+3. First number with frequency 1 is the answer.
+
+Why second traversal?
+HashMap order does not represent original array order.
+
+Time: O(n)
+Space: O(n)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
