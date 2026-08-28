@@ -1,5 +1,26 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: Binary Search - Last Occurrence
+
+Recognition:
+Sorted array with duplicates.
+Need the LAST index of target.
+
+Anchor:
+FOUND does NOT mean STOP.
+
+When target is found:
+save mid
+continue RIGHT
+
+ans = mid
+left = mid + 1
+
+Last -> RIGHT
+
+Time: O(log n)
+Space: O(1)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
