@@ -39,7 +39,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         System.out.println("Start small. Ship something.");
-        int[] nums = {2, 4, -1, 3, 5};a
+        int[] nums = {2, 4, -1, 3, 5};
         int target = 6;
         HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         map.put(0,-1);
