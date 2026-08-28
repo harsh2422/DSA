@@ -1,5 +1,22 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: HashMap
+
+Recognition:
+Need two values whose sum equals target, and need their indexes.
+
+Anchor:
+NEED -> search
+HAVE -> store
+
+NEED = target - nums[i]
+
+HashMap:
+number -> index
+
+Time: O(n)
+Space: O(n)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
