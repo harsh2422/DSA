@@ -1,5 +1,27 @@
-// Online Java Compiler
-// Find the number of distinct elements in each contiguous window of size k
+/*
+Pattern:
+Fixed Sliding Window + Frequency HashMap
+
+Recognition:
+Need distinct count for EVERY fixed-size window.
+
+HashMap:
+number -> frequency inside CURRENT window
+
+Anchor:
+Outgoing -> frequency--
+0 frequency -> remove key
+
+Incoming -> frequency++
+
+map.size() -> distinct count for current window
+
+Store each map.size() in result list.
+
+Time: O(n)
+Space: O(k)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
