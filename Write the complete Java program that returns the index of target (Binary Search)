@@ -1,5 +1,33 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+/*
+Pattern: Binary Search
+
+Recognition:
+Sorted search space + need to find target.
+
+Anchor:
+Check middle -> eliminate half
+
+target < nums[mid]:
+search LEFT
+right = mid - 1
+
+target > nums[mid]:
+search RIGHT
+left = mid + 1
+
+target == nums[mid]:
+found
+
+Search while:
+left <= right
+
+Why <= ?
+When left == right, one element is still left to check.
+
+Time: O(log n)
+Space: O(1)
+*/
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
