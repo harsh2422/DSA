@@ -1,0 +1,29 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int ans =-1;
+        int[] nums = {2, 4, 4, 4, 7, 9};
+        int target = 4;
+        int left =0;
+        int right=nums.length-1;
+        while(left<=right){
+            int mid = (left+right)/2;
+            if(target>nums[mid]){
+              left = mid+1;
+            }
+            else if(target<nums[mid]){
+                right = mid-1;
+            }
+            else{
+                ans= mid;
+                left= mid+1;
+            }
+        }
+       
+        System.out.println(ans);
+      
+    }
+}
